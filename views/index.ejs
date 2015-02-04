@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gincana</title>
+<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+<link rel='stylesheet' href='/stylesheets/bootstrap-theme.min.css' />
+<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body class="bg1">
+<div class="container vertical-center">     
+  <div class="span12">    
+    <div class="jumbotron">
+      <h1>Login</h1> 
+      </br>
+
+      <form action="login" method="post" >
+        <%- form %>
+        <br>
+        <% if (error != "ok") { %>
+          <div class="alert alert-danger" role="alert">
+            <strong>Ops!</strong> <%= error %>.
+          </div>
+        <% } %>
+        <button type="submit" class="btn btn-success">Logar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class class="footer" style="width: 43%;margin: 0 auto;">
+    <a href="http://www.din.uem.br/pet/" target="_blank"><img id="pet" title="PET" src="/images/logoPetInformatica.png" alt="PET" style="width: 240px"></a>
+    <a href="http://hackerspacemaringa.org/" target="_blank"><img id="hackerspace" title="Hackerspace" src="/images/hackerspace.png" alt="HACKERSPACE" style="width: 185px"></a>
+    <a href="http://ws2.din.uem.br/~caccom/" target="_blank"><img id="caccom" title="Caccom" src="/images/logocaccom.png" alt="CACCOM" style="width: 140px"></a>
+    <a href="http://www.din.uem.br/" target="_blank"><img id="din" title="Departamento de Informática UEM" src="/images/logoDin.svg" alt="DIN" style="width: 170px"></a> 
+</div>
+
+<script src="/javascripts/jquery-2.1.3.min.js"></script> 
+<script src="/javascripts/bootstrap.min.js"></script> 
+</body>
+</html>
