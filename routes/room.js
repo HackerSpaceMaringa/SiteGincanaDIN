@@ -67,8 +67,7 @@ module.exports = function(router, db) {
           db.find({ type: 'team' , name: req.param('teamName')},
             function (err, docs) {
               db.update( { type: 'team', name: req.param('teamName') }, 
-                { $set: { points: docs[0].points+parseInt(req.param('points')), 
-                          time: global.clock*10 } }, 
+                { $set: { points: docs[0].points+parseInt(req.param('points')), time: global.clock } }, 
                           function(err, num) {
                             res.redirect('/room');
                           });

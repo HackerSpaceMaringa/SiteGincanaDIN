@@ -10,7 +10,6 @@ module.exports = function(router, db) {
     }
   });
 
-
   router.all('/painel', function(req, res, next) {
     var sess = req.session; 
     if (sess.username == "admin") {
@@ -19,7 +18,6 @@ module.exports = function(router, db) {
           res.render('painel', { name: sess.username, active: "rank",  
                                  teams: docs})
         });
-
     } else {
       res.redirect("/");
     }
@@ -67,18 +65,18 @@ module.exports = function(router, db) {
       db.find({ type: 'student' }, function (err, docs) {
         var names = ['Alizarina', 'Âmbar', 'Aspargo', 'Borgonha', 'Carmesim', 
                      'Escarlate', 'Grená', 'Índigo', 'Jambo', 'Maná', 'Ocre', 
-                     'Quantum', 'Rútilo', 'Urucum'];
+                     'Quantum', 'Rútilo', 'Urucum', 'LastOne'];
         var size = docs.length;
         teams = [];
         
-        for (var i = 0; i < size - size%4; i++) {
-          var pos = Math.floor(i/4)
+        for (var i = 0; i < size - size%3; i++) {
+          var pos = Math.floor(i/3)
           if (teams[pos] == undefined) teams[pos] = []
 
           teams[pos].push(docs[i]);
         }
         
-        for (var i = size-size%4; i < size; i++) {
+        for (var i = size-size%3; i < size; i++) {
           teams[i % teams.length].push(docs[i]);
         }
   
@@ -94,6 +92,42 @@ module.exports = function(router, db) {
     }
   });
 
+  router.all('/painel/points', function(req, res, next) {
+    var sess = req.session; 
+    if (sess.username == "admin") {
+      db.find({ type: 'team' }, function (err, docs) {
+        res.render('painel', { name: sess.username, 
+          active: "points", 
+          teams: docs, status: "ok" });
+      });
+    } else {
+      res.redirect("/");
+    }
+  });
 
+  router.post('/painel/points/remove', function(req, res, next) {
+    var sess = req.session; 
+    if (sess.username == "admin") {
+      db.find({ type: 'team' , name: req.param('teamName')},
+        function (err, docs) {
+          db.update( { type: 'team', name: req.param('teamName') }, 
+            { $set: { points: docs[0].points-parseInt(req.param('points'))} }, 
+            function(err, num) {
+              res.redirect('/painel');
+            });
+        });
+    } else {
+      res.redirect("/");
+    }
+  });
 
+  router.post('/painel/time/set', function(req, res, next) {
+    var sess = req.session; 
+    if (sess.username == "admin") {
+      global.clock = parseInt(req.param("newTime"));
+      res.redirect('/painel');
+    } else {
+      res.redirect("/");
+    }
+  });
 }

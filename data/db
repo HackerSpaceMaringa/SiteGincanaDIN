@@ -1,0 +1,13 @@
+{"type":"student","name":"Viviane","_id":"6bnEtolNGTpKb7L8"}
+{"type":"student","name":"Alisson","_id":"8205IkgMohAH7obV"}
+{"type":"student","name":"Lailla","_id":"AlJ08KVwf0g2ap6E"}
+{"type":"student","name":"Rafaela","_id":"IvPWQMzgWgpw80Tp"}
+{"type":"team","name":"Aspargo","members":[{"type":"student","name":"João Luiz","_id":"fOL02UyCNYy6YBi5"},{"type":"student","name":"Marco","_id":"lUaDmikf8oROX5sZ"},{"type":"student","name":"Alexandre","_id":"sVgKP4YtOrl6ncA0"}],"points":0,"time":18,"activites":[],"_id":"JUGIefHl7siHfPIH"}
+{"type":"team","name":"Âmbar","members":[{"type":"student","name":"Rafaela","_id":"IvPWQMzgWgpw80Tp"},{"type":"student","name":"Tiago Pedrozo do Nascimento","_id":"X9TbrrVV05J7SlAN"},{"type":"student","name":"andre","_id":"ck70DvqlFQV2NDXX"}],"points":0,"time":0,"activites":[],"_id":"ONsR8mw5t1lshaUB"}
+{"type":"student","name":"Tiago Pedrozo do Nascimento","_id":"X9TbrrVV05J7SlAN"}
+{"type":"student","name":"andre","_id":"ck70DvqlFQV2NDXX"}
+{"type":"team","name":"Alizarina","members":[{"type":"student","name":"Viviane","_id":"6bnEtolNGTpKb7L8"},{"type":"student","name":"Alisson","_id":"8205IkgMohAH7obV"},{"type":"student","name":"Lailla","_id":"AlJ08KVwf0g2ap6E"},{"type":"student","name":"Marcos","_id":"tMDWJ2lhZ4FJik1s"}],"points":0,"time":0,"activites":[],"_id":"elhSMQSSt2QntmHM"}
+{"type":"student","name":"João Luiz","_id":"fOL02UyCNYy6YBi5"}
+{"type":"student","name":"Marco","_id":"lUaDmikf8oROX5sZ"}
+{"type":"student","name":"Alexandre","_id":"sVgKP4YtOrl6ncA0"}
+{"type":"student","name":"Marcos","_id":"tMDWJ2lhZ4FJik1s"}

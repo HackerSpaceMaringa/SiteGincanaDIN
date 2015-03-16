@@ -35,11 +35,11 @@ global.clock = 0;
 
 setInterval(function() { 
   if (global.started) global.clock += 1; 
-  if (global.clock == 100) { 
+  if (global.clock == 5400) { 
     global.started  = false;
     global.finished = true;
   }
-}, 300);
+}, 1000);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
